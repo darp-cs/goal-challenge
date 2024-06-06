@@ -1,14 +1,14 @@
 
 import './App.css';
 import { Button } from '@mui/material';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 function App() {
   
     const [status,setStatus] = useState()
       //================= CONFIG =================
     // Global Variables
-    let websocket_uri = 'ws://127.0.0.1:8000/record';
+    let websocket_uri = 'ws://127.0.0.1:8088/transcribe';
     let bufferSize = 4096,
         AudioContext,
         context,
@@ -85,7 +85,7 @@ function App() {
     } 
 
     function downsampleBuffer (buffer, sampleRate, outSampleRate) {
-        if (outSampleRate == sampleRate) {
+        if (outSampleRate === sampleRate) {
           return buffer;
         }
         if (outSampleRate > sampleRate) {
