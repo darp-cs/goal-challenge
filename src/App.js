@@ -70,7 +70,7 @@ function App() {
         // WebSocket Definitions: executed when triggered webSocketStatus
         websocket.onopen = function() {
           console.log("connected to server");
-          //websocket.send("CONNECTED TO YOU");
+          // websocket.send("CONNECTED TO YOU");
           setStatus('Connected')
         }
         
